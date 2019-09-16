@@ -15,9 +15,9 @@
 
 #### how to use
 
-`git add .`: add files in the current location
+* `git add .`: add files in the current location
 
-`git add [file_name]`: add the file named *file_name*
+* `git add [file_name]`: add the file named *file_name*
 
 ### git commit
 
@@ -26,11 +26,16 @@
 
 #### how to use
 
-`git commit`: you can create commit message in vim
+* `git commit`: you can create commit message in vim
 
-`git commit -m "commit_message"`: simplify  git commit process
+* `git commit -m "commit_message"`: simplify  git commit process
 
-`git commit -a -m "commit_message"`: simplify git add and commit process
+* `git commit -a -m "commit_message"`: simplify git add and commit process
+
+### unstaging
+
+* `git rm --cached [file_name]`: unstage file
+* `git rm --cached -r`: unstage all file
 
 ---
 
