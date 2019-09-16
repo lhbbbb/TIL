@@ -6,10 +6,6 @@ S(주어) merge O(목적어): O를 병합한다
 
 S rebase O: 새로 base를 ~에 만든다
 
-`git rm --cached [file_name]`: unstage file
-
-`git rm --cached -r .`: unstage all file
-
 `git remote add upstream https://github.com/sspy21/nhaeng.git`
 
 https://github.com/lhbbbb/collabo/invitaions
