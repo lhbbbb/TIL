@@ -38,7 +38,7 @@ settings => collaborators
 
 settings => branches
 
-![1568094512989](assets\branches.png)
+![branches](assets\branches.png)
 
 ## Tip
 
