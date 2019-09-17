@@ -92,6 +92,10 @@ git bash 창에서 커맨드 입력
 4. `article = Article(title="",content="")` // 키워드 인자로
 5. `article.save()` // DB에 저장
 
+#### shell 환경에서 해보기
+
+* `python manage.py shell_plus`도 가능
+
 ##### 기타
 
 대화식 python shell에서 command line으로 한 것을 django에서 scripts 형식으로 사용할 수 있다
