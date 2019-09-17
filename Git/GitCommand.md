@@ -105,7 +105,7 @@ if you face with conflict error, you can see this
 
 * 동일 라인의 내용이 다를 경우(거의 100% 일어남) // 동일 파일은 잘 안 일어남
 
-### git log
+## git log
 
 * `git log` command lets you check commit history
 
@@ -174,7 +174,7 @@ if you face with conflict error, you can see this
 
 
 
-## Remove Git Info in Local command
+## Remove Git Info in Local
 
 * `git credential reject` : 이 명령어 이후에 아래 명령어들을 입력
   * `protocol=https`
