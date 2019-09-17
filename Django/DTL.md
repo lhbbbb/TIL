@@ -79,3 +79,11 @@ class Movie(models.Model):
     open_date = models.DateField()
 ```
 
+## 7. 객체 개수 세기
+
+```html
+{{ comments.count }}
+{{ comments | length}}
+<!-- 같은 기능. comments | length 가 성능이 더 좋음 -->
+```
+
