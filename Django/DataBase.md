@@ -21,7 +21,7 @@
 
 * sqlite 홈페이지 접속하여 다음 파일 download
 
-![1569205937996](assets\sqlite_download.png)
+![sqlite](assets/sqlite_download.png)
 
 * 위에서 다운로드한 파일들을 모아주기 위한 폴더 sqlite 생성
 
