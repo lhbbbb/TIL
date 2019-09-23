@@ -94,6 +94,12 @@ git bash 창에서 커맨드 입력
 
 #### shell 환경에서 해보기
 
+```python
+INSTALLED_APPS = INSTALLED_APPS + [
+'django_extensions',
+]
+```
+
 * `python manage.py shell_plus`도 가능
 
 ##### 기타
