@@ -6,7 +6,7 @@ T = int(input())
 
 
 def baby_run(lst):
-    tmp = sorted(lst)
+    tmp = sorted(list(set(lst)))
     cnt = 0
     for i in range(len(tmp) - 1):
         diff = tmp[i + 1] - tmp[i]
@@ -14,7 +14,7 @@ def baby_run(lst):
             cnt += 1
         else:
             cnt = 0
-        if cnt == 2:
+        if cnt >= 2:
             return 1
     return 0
 
@@ -25,7 +25,7 @@ def triplet(lst):
         c[ele] += 1
 
     for ele in c:
-        if ele == 3:
+        if ele >= 3:
             return 1
     return 0
 
@@ -34,34 +34,30 @@ for tc in range(1, T + 1):
     numbers = list(map(int, input().split()))
 
     player1, player2 = [], []
+    result1, result2, res = 0, 0, 0
     for i in range(0, len(numbers), 2):
         player1.append(numbers[i])
-        player2.append(numbers[i + 1])
-        result_1 = baby_run(player1)
-        result_2 = baby_run(player2)
-        if result_1 > result_2:
-            res_run = 1
-        elif result_1 < result_2:
-            res_run = 2
-        else:
-            res_run = 0
 
-        result_1 = triplet(player1)
-        result_2 = triplet(player2)
-        if result_1 > result_2:
-            res_tri = 1
-        elif result_1 < result_2:
-            res_tri = 2
+        if baby_run(player1) or triplet(player1):
+            result1 = 1
         else:
-            res_tri = 0
-
-        if res_run != 0 and res_tri != 0:
+            result1 = 0
+        if result1 > result2:
+            res = 1
+            break
+        else:
             res = 0
-        elif res_run > res_tri:
-            res = res_run
-        else:
-            res = res_tri
 
-        if res != 0:
+        player2.append(numbers[i + 1])
+        if baby_run(player2) or triplet(player2):
+            result2 = 1
+        else:
+            result2 = 0
+        if result2 > result1:
+            res = 2
+            break
+        else:
+            res = 0
+        if res != 0 or result1 != 0 or result2 != 0:
             break
     print('#{} {}'.format(tc, res))
