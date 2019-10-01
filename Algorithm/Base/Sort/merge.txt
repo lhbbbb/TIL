@@ -1,0 +1,61 @@
+import sys
+sys.stdin = open("input.txt", "r")
+
+
+
+def partition(left, right):
+    p = arr[left]
+    i, j = left, right
+
+    while i < j:
+        while arr[i] <= p and i != right: i += 1
+        while arr[j] >= p and j != left:  j -= 1
+        if i < j: arr[i], arr[j] = arr[j], arr[i]
+
+    arr[left], arr[j] = arr[j], arr[left]
+    return j
+
+
+def quicksort(low, high):
+
+    if low < high:
+        pivot = partition(low, high)
+        if pivot == N//2:
+            return
+        elif pivot > N//2:
+            quicksort(low, pivot - 1)
+        else:
+            quicksort(pivot + 1, high)
+
+
+def fake_merge_sort(s, e):
+    global cnt
+
+    if e == s: return arr[s]
+
+    mid = (s + e + 1) // 2
+
+    lmax = fake_merge_sort(s, mid - 1)
+    rmax = fake_merge_sort(mid, e)
+
+    if lmax > rmax:
+        cnt += 1
+        return lmax
+    else:
+        return rmax
+
+
+
+# st = time.time()
+
+for tc in range(1, int(input()) + 1):
+    N = int(input())
+    arr = list(map(int, input().split()))
+
+    cnt = 0
+    fake_merge_sort(0, N - 1)
+    quicksort(0, len(arr) - 1)
+    print("#%d" % tc, arr[N//2], cnt)
+
+# print(time.time() - st)
+
