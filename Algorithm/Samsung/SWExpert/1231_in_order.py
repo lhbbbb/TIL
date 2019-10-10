@@ -4,7 +4,21 @@ sys.stdin = open('input.txt', 'r')
 
 T = 10
 
-for tc in range(1, 2):
+
+def DFS(node):
+    global string
+    if not graph.get(node):
+        visited[node] = True
+        string += data[node]
+    else:
+        for next_node in graph[node]:
+            DFS(next_node)
+            if not visited[node]:
+                visited[node] = True
+                string += data[node]
+
+
+for tc in range(1, T + 1):
     N = int(input())
 
     graph = {}
@@ -35,15 +49,6 @@ for tc in range(1, 2):
             data[lst[0]] = lst[1]
 
     visited = [0] * (N + 1)
-    stack = [1]
     string = ""
-    while stack:
-        node = stack.pop()
-        for next_node in reversed(graph[node]):
-            if not visited[next_node]:
-                stack.append(next_node)
-            if not graph.get(next_node):
-                visited[next_node] = True
-                string += data[next_node]
-
+    DFS(1)
     print('#{} {}'.format(tc, string))
