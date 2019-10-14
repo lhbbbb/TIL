@@ -2,6 +2,8 @@
 
 ## 2019.10.14
 
+RECAP 프로젝트
+
 ```django
 # 번역 해주는 애들(internationalization)
 USE_I18N = True
@@ -40,19 +42,21 @@ admin.site.register(Article, ArticleAdmin)
 
 * graphql 형식
 
+* get_absolute_url 정리
+
 
 
 ## django Form
 
-* RECAP 프로젝트
+[참고블로그](https://wayhome25.github.io/django/2017/05/06/django-form/)
 
-`pip install django-bootstrap4`
+### Bootstrap Form
 
-settings.py의 installed_apps에 bootstrap4 추가
+* `pip install django-bootstrap4`
 
+* settings.py의 installed_apps에 bootstrap4 추가
 
-
-### base.html
+#### base.html
 
 * 최상단에 다음 코드 입력
 
@@ -62,9 +66,7 @@ settings.py의 installed_apps에 bootstrap4 추가
 {% bootstrap_javascript jquery='full' %}
 ```
 
-
-
-### create.html
+#### create.html
 
 ```html
 {% extends 'base.html' %}
