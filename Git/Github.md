@@ -14,3 +14,9 @@
 * Star: 해당 원격 저장소에 관심이 있을 때 클릭. 오른쪽 숫자는 관심이 있는 사람의 수
 * Fork: 해당 버튼을 클릭하면 원격 저장소를 포크. 오른쪽은 포크한 사람의 수
 
+
+
+## Github 잔디 안 심어질 때(Git contribution)
+
+* github => settings > emails의 이메일이 local에 제대로 등록되어있는지 확인
+
