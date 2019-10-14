@@ -15,3 +15,17 @@ USE_L10N = True
 USE_TZ = True
 ```
 
+
+
+* test.py
+* 구현해낼 기능이나 만들어야할 모델을 미리 짬
+* test code를 먼저짜고 개발은 후에
+
+```django
+
+```
+
+
+
+
+
