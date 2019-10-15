@@ -73,3 +73,15 @@ admin.site.register(Article, ArticleAdmin)
 {% load bootstrap4 %}
 ```
 
+
+
+### form 사용법
+
+#### html
+
+```html
+<h2>Form 클래스를 통한 HTML Form 생성</h2>
+<form action="">
+  {{ form.as_p }}
+</form>
+```
