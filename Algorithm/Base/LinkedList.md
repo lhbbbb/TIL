@@ -24,14 +24,14 @@ class LinkedList:
         if self.tail:
             cur = self.tail
             cur.next = new_node
-            self.tail = new_node.next
+            self.tail = cur.next
         else:
             cur = self.head
-            while cur.next != None:
+            while cur.next:
                 cur = cur.next
 
             cur.next = new_node
-            self.tail = new_node.next
+            self.tail = new_node
 
     def insert(self, index, data):
         new_node = Node(data)
