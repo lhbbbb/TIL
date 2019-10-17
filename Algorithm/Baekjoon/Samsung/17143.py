@@ -1,18 +1,34 @@
+from collections import deque
+
 R, C, M = map(int, input().split())
 
-shark = [[[] for _ in range(C + 1)] for _ in range(R + 1)]
+shark = [[deque() for _ in range(C + 1)] for _ in range(R + 1)]
 shark[0] = [0] * (C + 1)
 for i in range(R + 1):
     shark[i][0] = 0
+
+for _ in range(M):
+    r, c, s, d, z = map(int, input().split())
+    shark[r][c].append([s, d, z])
 
 dy = [0, -1, 1, 0, 0]
 dx = [0, 0, 0, 1, -1]
 
 
-def move(y, x, dist, direction, size):
+def find_dist(x, direction):
+    if direction in [1, 2]:
+        x %= ((R - 1) * 2)
+    else:
+        x %= ((C - 1) * 2)
+
+    return x
+
+
+def move(y, x, velocity, direction, size):
     i = 0
     flag = True
     next_y, next_x = y, x
+    dist = find_dist(velocity, direction)
     while i < dist:
         if flag:
             next_y += dy[direction]
@@ -42,12 +58,10 @@ def move(y, x, dist, direction, size):
         elif direction == 4:
             shark[y][x][0][1] = 3
 
-    shark[next_y][next_x].append(shark[y][x].pop(0))
+    if shark[next_y][next_x]:
+        eat_candi.append((next_y, next_x))
+    shark[next_y][next_x].append(shark[y][x].popleft())
 
-
-for _ in range(M):
-    r, c, s, d, z = map(int, input().split())
-    shark[r][c] += [[s, d, z]]
 
 total_size = 0
 for i in range(1, C + 1):
@@ -64,13 +78,12 @@ for i in range(1, C + 1):
             if shark[j][k]:
                 points.append((j, k))
 
+    eat_candi = []
     for j, k in points:
         move(j, k, shark[j][k][0][0], shark[j][k][0][1], shark[j][k][0][2])
 
     # 상어 잡아먹기
-    for j in range(1, R + 1):
-        for k in range(1, C + 1):
-            if len(shark[j][k]) > 1:
-                shark[j][k] = [max(shark[j][k], key=lambda x: x[2])]
+    for j, k in eat_candi:
+        shark[j][k] = deque([max(shark[j][k], key=lambda x: x[2])])
 
 print(total_size)
