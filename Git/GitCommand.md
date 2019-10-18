@@ -104,6 +104,7 @@ if you face with conflict error, you can see this
 ##### conflict 발생조건
 
 * 동일 라인의 내용이 다를 경우(거의 100% 일어남) // 동일 파일은 잘 안 일어남
+* conflice 해결 후 `resolve merge conflict` commit message 남기기
 
 ## git log
 
