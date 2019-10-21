@@ -1,6 +1,15 @@
 # Minimum Spanning Tree(MST)
 
+## Spanning Tree
+
+* 최소 간선(n-1개)으로 그래프 내의 모든 정점을 연결하는 트리
+* 하나의 그래프에서 스패닝 트리는 여러개가 존재할 수 있다
+
+![spanning tree](assets\spanning_trees.jpg)
+
 * 최소 신장 트리
+
+
 
 ## 프림
 
