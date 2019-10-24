@@ -69,6 +69,7 @@
 
 ### static URL  설정
 
+* 개발자가 작성한 CSS 파일이나 넣고자 하는 이미지 파일 등이 Django 프로젝트 폴더 내부의 ‘/assets’에 있다. ‘이 폴더 안에 Static 파일이 있다.’라고 Django 프로젝트에게 알려주기 위하여 settings.py에 작성해야 하는 설정
 * 기본 앱의 settings.py
 * STATIC_URL 변수와 관련 있음
 * 기본 앱 하위에 assets 폴더 생성
