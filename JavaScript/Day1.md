@@ -286,8 +286,6 @@ console.log(meJSON)
 ### Dino 뛰어놀게 만들기
 
 ```js
-document.querySelector()
-// eventlistener
 const dino = document.querySelector('#dino')
 
 dino.addEventListener('click', event => {
@@ -295,8 +293,30 @@ dino.addEventListener('click', event => {
     console.log(event)
 })
 
-document.addEventListener('mousemove', e => {
-    console.log(e)
+let x = 0
+let y = 0
+
+document.addEventListener('keydown', e => {
+    // console.log(e.keyCode)
+    if (e.keyCode === 37) {
+        console.log('왼쪽으로 이동')
+        x -= 40
+        dino.style.marginLeft = `${x}px`
+    } else if (e.keyCode === 38) {
+        console.log('위로 이동')
+        y -= 40
+        dino.style.marginTop = `${y}px`
+    } else if (e.keyCode === 39) {
+        console.log('오른쪽으로 이동')
+        x += 40
+        dino.style.marginLeft = `${x}px`
+    } else if (e.keyCode === 40) {
+        console.log('아래로 이동')
+        y += 40
+        dino.style.marginTop = `${y}px`
+    } else {
+        alert('잘못된 키를 눌렀어요. 방향키를 눌러주세요.')
+    }
 })
 ```
 
