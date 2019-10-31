@@ -23,3 +23,62 @@
 * 구현을 쉽게 하기 위해 배열의 첫번째 인덱스인 0은 사용하지 않는다
 * 특정 위치의 노드 번호는 새로운 노드가 추가되어도 변하지 않는다
 
+## 배열
+
+### 삽입
+
+```python
+def heap(data):
+    tree.append(data)
+    i = len(tree) - 1
+    while i != 1:
+        cur = i
+        parent = i // 2
+        if tree[parent] > tree[cur]:
+            tree[parent], tree[cur] = tree[cur], tree[parent]
+        else:
+            break
+        i //= 2
+
+    print(tree)
+```
+
+### 삭제
+
+```python
+def heap_pop():
+    tree[1], tree[-1] = tree[-1], tree[1]
+    i = 1
+    while i < len(tree):
+        cur = i
+        child = i * 2
+        if child + 1 >= len(tree):
+            break
+        if tree[cur] > tree[child]:
+            if tree[child] < tree[child + 1]:
+                tree[cur], tree[child] = tree[child], tree[cur]
+            else:
+                if tree[child + 1] < tree[cur]:
+                    tree[cur], tree[child + 1] = tree[child + 1], tree[cur]
+        i *= 2
+    tree.pop()
+    print(tree)
+```
+
+```python
+tree = [0]
+heap(5)
+heap(6)
+heap(4)
+heap(3)
+heap(8)
+heap(10)
+heap(8)
+heap(1)
+
+heap_pop()
+heap_pop()
+heap_pop()
+heap_pop()
+```
+
