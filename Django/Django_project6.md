@@ -174,7 +174,7 @@ from drf_yasg.views import get_schema_view
 
 ```python
 schema_view = get_schema_view(
-    oepnapi.Info(
+    openapi.Info(
         title='Music API',
         default_version='v1',
     )
