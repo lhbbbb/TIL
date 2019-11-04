@@ -21,7 +21,7 @@ def findset(x):
 
 
 def union(x, y):
-    p[findset(y)] = findset(x)
+    p[findset(y)] = findset(x) # 자식의 부모를 부모의 부모로 업데이트
 
 
 for tc in range(1, T + 1):
