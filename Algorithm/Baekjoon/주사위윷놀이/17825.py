@@ -2,15 +2,23 @@ lst = list(map(int, input().split()))
 
 board = [0] * 501
 board_dict = {}
+for i in range(501):
+    board_dict[i] = 0
 
-
-def backtrack(k):
+def backtrack(k, score, tmp_loc, tmp):
     global max_val
     if k == 10:
-        player = [0] * 5
-        player_loc = [0] * 5
-        for i in range(10):
-            loc = player_loc[visited[i]] + lst[i]
+        if score > max_val:
+            max_val = score
+    else:
+        for i in range(1, 5):
+            if k == 0:
+                if i != 1:
+                    continue
+            visited[k] = i
+            player = tmp[::]
+            player_loc = tmp_loc[::]
+            loc = player_loc[visited[k]] + lst[k]
             if 0 <= loc <= 19 or 100 <= loc <= 103 or 200 <= loc <= 202 or 300 <= loc <= 303 or 400 <= loc <= 403:
                 if loc == 5:
                     loc = 100
@@ -18,9 +26,6 @@ def backtrack(k):
                     loc = 200
                 elif loc == 15:
                     loc = 300
-                if loc in player_loc:
-                    return
-                player_loc[visited[i]] = loc
             else:
                 if loc == 20:
                     loc = 403
@@ -30,16 +35,12 @@ def backtrack(k):
                     loc = 400 + (loc - 203)
                 elif 304 <= loc <= 307:
                     loc = 400 + (loc - 304)
-                player_loc[visited[i]] = loc
-                board_dict[player_loc[visited[i]]] = 0
-            player[visited[i]] += board_dict[player_loc[visited[i]]]
-        score = sum(player)
-        if score > max_val:
-            max_val = score
-    else:
-        for i in range(1, 5):
-            visited[k] = i
-            backtrack(k + 1)
+
+            if loc in player_loc:
+                continue
+            player_loc[visited[k]] = loc
+            player[visited[k]] += board_dict[player_loc[visited[k]]]
+            backtrack(k + 1, sum(player), player_loc, player)
 
 
 # normal route
@@ -76,5 +77,7 @@ for i in range(400, 404):
 max_val = 0
 visited = [0] * 10
 cnt = 0
-backtrack(0)
+player = [0] * 5
+player_loc = [0] * 5
+backtrack(0, 0, player_loc, player)
 print(max_val)
