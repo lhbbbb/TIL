@@ -5,7 +5,7 @@
 * 최소 간선(n-1개)으로 그래프 내의 모든 정점을 연결하는 트리
 * 하나의 그래프에서 스패닝 트리는 여러개가 존재할 수 있다
 
-![spanning tree](assets\spanning_trees.jpg)
+![spanning tree](assets/spanning_trees.jpg)
 
 * 최소 신장 트리
 
@@ -23,7 +23,7 @@
 
 ### 관련문제
 
-* [다리만들기2](/Algorithm/Baekjoon/다리만들기2/17472.py)
+* [다리만들기2](/Algorithm/Baekjoon/다리만들기2/17472.py), [최소신장트리](/Algorithm/Samsung/2기서울1반10월17일이현빈/5249_최소신장트리.py)
 
 ### 과정
 
