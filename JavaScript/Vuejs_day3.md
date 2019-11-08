@@ -66,7 +66,7 @@
       "eslint:recommended"
     ],
     "rules": {
-      "no-console": "off"
+      "no-console": "off" // console.log 기능 사용할 수 있게 해줌. default는 사용불가
     },
 ```
 
