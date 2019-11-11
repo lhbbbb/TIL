@@ -214,3 +214,27 @@ U			PUT		/musics/:pk/comments/:pk
 D			DELETE	/musics/:pk/comments/:pk
 ```
 
+
+
+## Django axios 사용법(좋아요 기능과 관련)
+
+#### CSRF Token
+
+Django 에서 csrftoken을 생성해서 클라이언트에 보내주고, 클라이언트는 이를 쿠키에 저장하고, vue.js에서는 이 쿠키를 찾아서 요청헤더에 쿠키 값을 넣어서 보내줘야 한다. Django 에서와 Vue.js에서의 csrf 헤더와 토큰 이름을 맞춰줘야 한다.
+
+```js
+// POST 방법으로 보낼 때 해줘야하는 작업
+
+// 사용할 axios 마다 지정해줄 수도 있고,
+axios.post('/api/todo/create/', postData, {xsrfCookieName: 'csrftoken', xsrfHeaderName: 'X-CSRFToken'})
+// 전역변수로 설정해줘서 사용도 가능
+axios.defaults.xsrfCookieName = 'csrftoken'
+axios.defaults.xsrfHeaderName = 'X-CSRFToken'
+axios.post(`/articles/${articleId}/like/`) 
+```
+
+CSRF Token은 Django에서 생성을 하는데 {% csrf_token %} 으로 생성한다.
+
+Django 에서 처음부터 csrf token이 만들어져 있지 않다면 (CSRF cookie not set) 이라는 오류가 발생한다.
+
+이러한 문제를 해결하기 위해서 Django 에서는 데코레이터를 제공하고 있다.
