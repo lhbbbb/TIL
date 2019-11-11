@@ -368,3 +368,10 @@ methods: {
 
 * **vue.js key**
   * [참고](https://kr.vuejs.org/v2/guide/list.html)
+
+
+
+## Vue 관련 VSCode Extension
+
+* Vetur
+* Vue VSCode Snippets
