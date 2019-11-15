@@ -7,22 +7,19 @@ def oper():
     max_len = 0
     for row in range(len(A)):
         tmp = [0] * 101
+        max_val = 0
         for ele in A[row]:
             tmp[ele] += 1
+            if max_val < tmp[ele]:
+                max_val = tmp[ele]
+
         sorted_lst = []
-        compare = 0
-        for idx, value in enumerate(tmp):
-            if idx != 0 and value != 0:
-                if compare <= value:
-                    compare = value
-                    sorted_lst += [idx, value]
-                else:
-                    sorted_lst = [idx, value] + sorted_lst
+        for i in range(1, max_val + 1):
+            for idx, val in enumerate(tmp):
+                if val == i and idx != 0:
+                    sorted_lst += [idx, val]
+
         lst_len = len(sorted_lst)
-        for i in range(0, lst_len - 2, 2):
-            if sorted_lst[i + 1] == sorted_lst[i + 3]:
-                if sorted_lst[i] > sorted_lst[i + 2]:
-                    sorted_lst[i], sorted_lst[i + 2] = sorted_lst[i + 2], sorted_lst[i]
 
         if lst_len > 100:
             A[row] = sorted_lst[:100]
@@ -35,31 +32,24 @@ def oper():
     for row in range(len(A)):
         A[row] += [0] * (max_len - len(A[row]))
 
+    return max_len
+
 
 # 연산 정하기
 cnt = 0
-i = 0
+r_len, c_len = len(A), len(A[0])
 while True:
-    if i > 10:
+    if cnt > 100:
+        print(-1)
         break
-    i += 1
-    r_len = len(A)
-    c_len = len(A[0])
     if 0 <= r < r_len and 0 <= c < c_len:
-        if A[r][c] == 100:
-            print(-1)
-            break
-        elif A[r][c] == k:
+        if A[r][c] == k:
             print(cnt)
             break
+    cnt += 1
     if r_len >= c_len:
-        cnt += 1
-        oper()
+        c_len = oper()
     else:
-        cnt += 1
         A = list(zip(*A))
-        oper()
+        r_len = oper()
         A = list(zip(*A))
-    for row in A:
-        print(row)
-    print()
