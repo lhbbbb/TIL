@@ -1,45 +1,7 @@
-# Single file component
-
-* 확장자명
-  * .vue
-
-* vue cli
-
-`npm install -g @vue/cli`
-
-`vue create todo-vue-cli`
-
-
-
-## babel.config
-
-* 번역가
-
-
-
-## package.json
-
-
-
 ## package-lock.json
 
 * package.json을 기반으로 만들어주는것
 * 건드릴 필요 없음
-
-
-
-## VSCode settings
-
-* indentation set
-  * f1 => preference => open settings(Json)=> 다음 내용 추가
-
-```json
-    "[vue]": {
-        "editor.tabSize": 2
-    },
-```
-
-* server 돌리기 `npm run serve`
 
 ## App.vue
 
@@ -50,25 +12,6 @@
 ## mockup
 
 * 카카오 오븐
-
-
-
-## package.json 설정
-
-```json
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {
-      "no-console": "off" // console.log 기능 사용할 수 있게 해줌. default는 사용불가
-    },
-```
 
 
 
@@ -147,12 +90,6 @@ export default {
 
 </style>
 ```
-
-
-
-## googleapi 사용하기
-
-`https://www.googleapis.com/youtube/v3/search?key=API_KEY&type=video&part=snippet&q=검색어`
 
 ### API KEY 숨기기
 
