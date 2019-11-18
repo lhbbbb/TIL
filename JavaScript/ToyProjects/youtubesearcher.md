@@ -24,7 +24,7 @@ VUE_APP_YOUTUBE_API_KEY=XXXXXXXXXXXXXXX
 
 ### 컴포넌트 구조
 
-![컴포넌트구조](assets/youtube1.jpg)
+![컴포넌트구조](assets/youtube1.JPG)
 
 ![컴포넌트구조](assets/youtube2.png)
 
