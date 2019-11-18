@@ -5,7 +5,7 @@
 * [v-bind](#v-bind)
 * [v-model](#v-model)
 * [v-show](#v-show)
-* [v-if, v-else-if, v-else](#v-if, v-else-if, v-else)
+* [v-if, v-else-if, v-else](#v-if,-v-else-if,-v-else)
 * [v-for](#v-for)
 * [v-pre](#v-pre)
 * [v-once](#v-once)
