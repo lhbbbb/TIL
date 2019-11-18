@@ -16,7 +16,7 @@
 
 ### Vue를 배우는 이유
 
-javascript보다 페이지를 만들기 쉽다.
+Vanilla js보다 페이지를 만들기 쉽다.
 
 ### Vue convention
 
