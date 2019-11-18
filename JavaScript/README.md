@@ -14,6 +14,15 @@
 
 ## Vue JS
 
+### Vue를 배우는 이유
+
+javascript보다 페이지를 만들기 쉽다.
+
+### Vue convention
+
+* addEventListener의 콜백함수로 arrow function `() => {}`를 사용하지 않는다.
+* `$, _`로 변수명을 만들지 않는다.
+
 ### [Vue Instance](./VueInstance.md)
 
 1. 개념
@@ -30,3 +39,13 @@
 
 1. 개념
 2. directives
+
+### [Vue Cli](./VueCli.md)
+
+1. 개념
+2. 설치
+3. 기본 설정
+
+## JS 활용 Toy Projects
+
+### [Youtube Searcher]()

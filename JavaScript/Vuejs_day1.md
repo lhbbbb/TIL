@@ -1,18 +1,7 @@
-# JS를 쓰는 이유
-
-* Client Side(Browser) Rendering을 하기 위해
-  * 사용자 경험
-  * 서버 부담을 줄이기 위해
-* 즉 클라이언트가 렌더링을 한다
-* js를 쓰지 않을 때는 django가 해줬는데 이를 Server Side Rendering이라 한다
-
 # Vue.js
 
-* javascript보다 페이지를 만들기 쉬워서 배움
-* addEventListener의 콜백함수로 arrow function을 사용하지 않는다
 * input event 입력되는 순간을 캐치
 * reactive 반응형(data의 변화) => 자동적용, 반영
-* $, _ 로 변수명을 만드는 건 자제
 
 ## 만들어보기
 
