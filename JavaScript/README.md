@@ -46,6 +46,7 @@ Vanilla js보다 페이지를 만들기 쉽다.
 2. 설치
 3. 기본 설정
 
-## JS 활용 Toy Projects
 
-### [Youtube Searcher]()
+
+## [JS 활용 Toy Projects]()
+
