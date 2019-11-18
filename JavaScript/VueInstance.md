@@ -1,7 +1,7 @@
 # Vue Instance
 
-* [Vue Instance 초기화에 사용되는 속성들](###Vue-Instance-초기화에-사용되는-속성들)
-* [Components에서 활용되는 속성들](###Components에서-활용되는-속성들)
+* [Vue Instance 초기화에 사용되는 속성들](#Vue-Instance-초기화에-사용되는-속성들)
+* [Components에서 활용되는 속성들](#Components에서-활용되는-속성들)
 
 ## 개념
 
