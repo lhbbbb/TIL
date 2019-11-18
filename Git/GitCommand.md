@@ -180,7 +180,7 @@ if you face with conflict error, you can see this
 * `git credential reject` : 이 명령어 이후에 아래 명령어들을 입력
   * `protocol=https`
   * `host=github.com`
-  * ``host=lab.ssafy.com`
+  * `host=lab.ssafy.com`
   * 마지막으로 enter 두번 눌러준다
 * `git config --unset --global user.name`
 * `git config --unset --global user.email`
