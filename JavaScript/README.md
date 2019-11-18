@@ -1,5 +1,13 @@
 # JavaScript
 
+## JS를 사용하는 이유
+
+동적인 웹페이지를 만들기 위해서 사용한다.
+
+기존의 JSP, Servlet, ASP로도 동적인 웹페이지를 작성할 수 있지만, 이들은 Server Side Rendering을 하기 때문에 브라우저의 요청에 즉각적인 반응을 하지 못하고 웹 서버의 다른 동작을 방해하게 된다.
+
+즉, JS는 Client Side(Browser) Rendering을 하여 서버의 과부하에 따른 서버의 부담을 줄이고 사용자 경험에서의 편의성 측면을 위해 사용한다.
+
 ## Vanilla JS
 
 
