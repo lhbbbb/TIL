@@ -36,3 +36,4 @@ Vue 생태계에 있어서 표준 툴링 기준이 되는 것을 목적으로 �
 	"no-console": "off" // console.log 기능 사용할 수 있게 해줌. default는 사용불가
 },
 ```
+
