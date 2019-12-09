@@ -23,10 +23,14 @@ Jekyll 은 [GitHub Pages](https://pages.github.com/) 의 내부 엔진이기 때
 윈도우는 공식적으로 지원하는 플랫폼이 아니다. 따라서 몇 가지의 추가 작업을 거쳐야한다.
 
 1. RubyInstaller for Windows를 사용하여 [루비설치](https://rubyinstaller.org/downloads/)
-2. GCC 설치
+2. MinGW, GCC 설치
 3. Make 설치
 
+#### GCC 설치
 
+
+
+#### Make 설치
 
 ## Test
 
