@@ -68,7 +68,7 @@ Robustness는 outlier, 즉 이상치가 등장했을 때 loss function이 얼마
 
 그런데 최대가 되는 우도를 찾기 각각의 우도를 스케일(평균 내기, log 씌우기)해도 전체 $\arg\max$의 결과는 바뀌지 않으므로 다음이 성립한다.
 
-[ **우도의 곱**을 최대로 만드는 $\theta$ ] == [ [로그 우도의 기대값](/statistics/expected_value.md)을 최대로 만드는 $\theta$ ]
+[ **우도의 곱**을 최대로 만드는 $\theta$ ] == [ [로그 우도의 기대값](/Statistics/expected_value.md)을 최대로 만드는 $\theta$ ]
 
 > 로그 우도의 기대값 = $\sum_{x}P(y|x) \log P(y|x;θ)$
 
