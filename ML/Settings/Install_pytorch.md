@@ -1,6 +1,6 @@
 # Pytorch 설치하기
 
-* GPU 작동 Pytorch 설치
+> GPU 환경에서 작동하는 Pytorch 설치하는 방법
 
 ##### Cuda 버전 확인
 
@@ -11,5 +11,32 @@
 
 ## Pytorch 설치
 
-* `conda install pytorch torchvision cudatoolkit=9.0 -c pytorch` 명령어 git bash에서 입력
-* 
+1. conda 가상환경 준비
+2. pytorch 설치
+3. 설치가 잘 되었는지 test
+
+global conda 환경이 아닌 특정 가상환경에서만 해당 패키지를 사용하기 위해 conda 가상환경을 만든다.
+
+`conda create -n [venv_name] python=3.7` 명령어로 가상 환경을 만든 후, cmd 창에서 `conda activate [venv_name]` 명령어로 가상환경을 활성화시킨다.
+
+해당 가상환경에서 `conda install pytorch torchvision cudatoolkit=9.0 -c pytorch` 명령어로 pytorch를 설치한다.
+
+Pycharm 의 `Project Interpreter`  탭에서 그림과 같이 설정해준다. **Inherit global site-packages** 옵션을 체크해야 conda 가상환경에서 설치한 패키지를 사용할 수 있다.
+
+![pycharm_settings](assets/interpreter_setting.png)
+
+설치 후에, 다음 명령어로 test를 해본다.
+
+```python
+import torch
+print(torch.cuda.get_device_name(0))
+print(torch.cuda.is_available())
+print(torch.__version__)
+```
+
+```
+>>> GeForce GTX 1050 Ti with Max-Q Design
+>>> True
+>>> 1.1.0
+```
+
