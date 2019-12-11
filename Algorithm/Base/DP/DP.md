@@ -1,4 +1,8 @@
-# DP
+# DP(Dynamic Programming)
+
+## 개요
+
+지역적 최적해를 사용하여 규칙성(점화식)을 발견하여 전역적 최적해를 찾는 기법이다.
 
 ## Memoization
 
@@ -22,8 +26,6 @@ def pivo(n):
     return memo[n]
 ```
 
-
-
 ## DP 사용 최적화 문제를 해결하는 알고리즘 절차
 
 1. 문제의 입력에 대해서 최적의 해답을 주는 재귀적 속성을 설정
@@ -40,5 +42,5 @@ def pivo(n):
 
 #### 행렬 곱셈 순서
 
-[11049](https://www.acmicpc.net/problem/11049)
+[11049](https://www.acmicpc.net/problem/11049), [등굣길](https://programmers.co.kr/learn/courses/30/lessons/42898), [거스름돈](https://programmers.co.kr/learn/courses/30/lessons/12907#)
 
