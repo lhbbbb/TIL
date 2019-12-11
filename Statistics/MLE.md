@@ -9,7 +9,7 @@ $$
 L(\theta|x) \propto p(x|\theta)
 $$
 
-이산 확률 변수에서는 특정 사건이 일어날 확률 = 우도(가능도)가 되며, 연속 확률 변수에서는 Likelihood가 확률이 아니라, $pdf$의 $y$값이 Likelihood가 된다. 수식적으로, 가능도라는 것은 $y=f(x)$로 표현할 수 있는 수식이다.
+이산 확률 변수에서는 특정 사건이 일어날 확률 = 우도(가능도)가 되며, 연속 확률 변수에서는 Likelihood가 확률이 아니라, $pdf$의 $y$값이 Likelihood가 된다. 수식적으로, 가능도라는 것은 $y=f(x)$로 표현할 수 있는 수식이다. 이와 관련해서 좀 더 자세한 내용은 [김진섭님의 글](http://rstudio-pubs-static.s3.amazonaws.com/204928_c2d6c62565b74a4987e935f756badfba.html)에 잘 정리되어 있다.
 
 ### 표기법
 
