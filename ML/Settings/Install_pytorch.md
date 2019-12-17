@@ -40,3 +40,12 @@ print(torch.__version__)
 >>> 1.1.0
 ```
 
+## Jupyter notebook
+
+주피터 노트북에서 Pytorch를 사용하기 위해서는 다음과 같은 작업을 별도로 수행해줘야한다.
+
+1. `conda install ipykernel` 명령어로 주피터 노트북 패키지를 설치한다.
+
+2. `python -m ipykernel install --user --name pytorch --display-name "PyTorch"` 명령어로 주피터에 새 kernel을 등록한다.
+
+주피터 노트북을 실행해 `PyTorch`란 이름의 커널이 있는지 확인한다.
