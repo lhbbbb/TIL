@@ -25,3 +25,6 @@
 - 제어판 => 프로그램 및 기능 => Windows 기능 켜기/끄기 => Hyper-v 체크
 
 bash창이나 cmd창에서 `docker run hello-world` 명령어로 잘 설치되었는지 확인한다.
+
+기본 사용방법은 [Docker User Guide](https://github.com/deeplearningzerotoall/PyTorch/blob/master/docker_user_guide.md)를 참고한다.
+
