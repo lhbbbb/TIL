@@ -314,5 +314,4 @@ def create(request):
 
 # Tip
 
-- naver, kakao 대졸 초임 3천대 시작
 - VSCode에서 ctrl + p치고 찾고 싶은 파일명 대충 입력하면 쉽게 찾을 수 있다
