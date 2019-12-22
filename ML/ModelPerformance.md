@@ -1,5 +1,7 @@
 # Model Performance
 
+* [관련 블로그](https://sumniya.tistory.com/26)
+
 어떤 모델이든 간에 발전을 위한 feedback은 현재 모델의 performance를 올바르게 평가하는 것에서 시작된다. 이번 글에서는 모델이 평가해야하는 요소와 그것을 수치화한 지표들, 관련 개념들에 대해서 다룬다.
 
 ## Precision VS Recall
