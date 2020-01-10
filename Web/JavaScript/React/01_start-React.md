@@ -6,7 +6,7 @@
 
 프로젝트 폴더를 만들고 나서 `package.json` 파일의 `scripts` 변수를 수정해주는 작업을 진행합니다.
 
-![1578369652232](assets/modi_var.png)
+![modi_var](assets/modi_var.png)
 
 `test`와 `eject`는 필요하지 않기 때문에 지워줍니다.
 
