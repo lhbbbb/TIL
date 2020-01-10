@@ -1,6 +1,6 @@
 # Maximum Likelihood Estimation
 
-이 글은 [ratsgo's blog](https://ratsgo.github.io/statistics/2017/09/23/MLE/)와 위키피디아의 내용을 정리했음을 먼저 밝힙니다.
+이 글은 [ratsgo's blog](https://ratsgo.github.io/statistics/2017/09/23/MLE/)와 위키피디아의 내용을 정리했음을 먼저 밝힙니다. MLE가 Machine Learning에서 어떻게 사용되는지 좀 더 자세히 알고 싶으면 [남기현님의 블로그](https://devkihyun.github.io/study/Machine-learining-and-Probability/)를 참조하시길 바랍니다.
 
 ## 개념
 
