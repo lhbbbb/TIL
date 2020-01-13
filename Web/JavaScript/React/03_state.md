@@ -89,5 +89,59 @@ class App extends React.Component {
 }
 ```
 
+### Component Life Cycle
 
+리액트가 컴포넌트를 생성하고 없애는 방법이다.
+
+리액트는 기본적으로 컴포넌트가 생성될 때, render 전에 호출되는 몇 가지 function들과 render 후에 호출되는 function들이 있다.
+
+1. mounting: 태어나는 것
+2. updating: 업데이트
+3. unmounting: 컴포넌트가 죽는 것을 의미한다.
+   - 페이지를 바꿀 때
+   - state를 사용해 컴포넌트를 교체할 때 등이 있다.
+
+#### Mounting
+
+- `constructor()`: js에서 클래스를 만들 때 호출된다.
+- `render()`
+- `componentDidMount()`: 컴포넌트가 처음 render가 됐다는 것을 알려준다.
+
+#### Updating
+
+state를 변경할 때, 업데이트가 일어난다.
+
+- `render()`
+- `componentDidUpdate()`: 컴포넌트가 업데이트 된 후에 렌더링이 끝나면 호출된다.
+
+component life cycle을 이해하기 위해 간단하게 콘솔창을 통해서 알아보도록 한다.  처음 마운팅 과정에서 렌더링 후 `componentDidMount()`가 호출되고 `setTimeout()` 함수를 통해 5초 후에 state가 업데이트 되면서 다시 `render()`와 `componentDidUpdate()`가 호출 되는 것을 볼 수 있다.
+
+```react
+import React from 'react';
+// import PropTypes from 'prop-types';
+
+class App extends React.Component {
+  state = {
+    isLoading: true
+  }
+  componentDidMount() {
+    console.log("did mounting")
+    setTimeout(() => {
+      this.setState({isLoading:false})
+    }, 5000)
+  }
+  componentDidUpdate() {
+    console.log("updating")
+  }
+  render() {
+    console.log("rendering")
+    const {isLoading} = this.state
+    return <div>{isLoading ? "Loading..." : "We are ready"}</div>
+  }
+}
+
+export default App;
+```
+
+![life-cycle](assets/life_cycle.png)
 
