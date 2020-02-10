@@ -17,7 +17,7 @@
 
 global conda 환경이 아닌 특정 가상환경에서만 해당 패키지를 사용하기 위해 conda 가상환경을 만든다.
 
-`conda create -n [venv_name] python=3.7` 명령어로 가상 환경을 만든 후, cmd 창에서 `conda activate [venv_name]` 명령어로 가상환경을 활성화시킨다.
+`conda create -n [venv_name] python=3.7` 명령어로 가상 환경을 만든 후, cmd 창에서 `conda activate [venv_name]` 명령어로 가상환경을 활성화시킨다. 해당 가상환경은 `~/Anaconda3/envs` 경로에 존재한다.
 
 해당 가상환경에서 `conda install pytorch torchvision cudatoolkit=9.0 -c pytorch` 명령어로 pytorch를 설치한다.
 
