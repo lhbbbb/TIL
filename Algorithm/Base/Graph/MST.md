@@ -17,7 +17,35 @@
 
 1. 임의 정점을 하나 선택 시작
 2. 선택한 정점과 인접하는 정점들 중 최소 비용의 간선이 존재하는 정점 선택
-3. 모든 정점 선택될 때까지 1,2 반복
+3. 모든 정점 선택될 때까지 2 반복
+
+```python
+def Prim(G, s) # G: 그래프, s: 시작 정점
+	# Settings
+    edges = [float('inf')] * N # 간선에 해당하는 가중치 값들
+    p = [None] * N # 자신과 연결된 부모 노드
+    visited = [0] * N # 방문 여부
+    edges[s] = 0 # 시작 노드 가중치 0으로 초기화    
+    
+    # 2. 
+    for _ in range(N):
+        min_val = float('inf')
+        min_idx = -1
+        # 방문 안한 정점 중 최소 가중치 정점 찾기
+        for i in range(N):
+            if not visited[i] and edges[i] < min_val:
+                min_idx = i
+                min_val = edges[i]
+       	visited[min_idx] = 1 # 방문 처리
+        # 간선 정보 업데이트, 업데이트 된 간선 정보를 가지는 노드들이 다음 후보군이 된다.
+        for node, val in G[min_idx]:
+            if not visited[node] and val < edges[node]:
+                edges[node] = val
+                p[node] = min_idx
+
+```
+
+
 
 ## 크루스칼
 
