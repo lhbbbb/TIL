@@ -1,27 +1,15 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import { HashRouter, Route } from "react-router-dom"
+import About from "./routes/About"
+import Home from "./routes/Home"
+import Navi from "./components/Navigator"
 
-class App extends React.Component {
-  state = {
-    count: 0
-  }
-  add = () => {
-    console.log("add")
-    this.setState(current => ({count:current.count + 1}))
-  }
-  minus = () => {
-    console.log("minus")
-    this.setState({count:this.state.count - 1})
-  }
-  render() {
-    return (
-      <div>
-        <h1>I'm a {this.state.count}</h1>
-        <button onClick={this.add}>Plus</button>
-        <button onClick={this.minus}>Minus</button>
-      </div>
-    )
-  }
+function App() {
+    return <HashRouter>
+        <Navi/>
+        <Route path="/" exact={true} component={Home}/>
+        <Route path="/about" component={About}/>
+    </HashRouter>
 }
 
 export default App;
