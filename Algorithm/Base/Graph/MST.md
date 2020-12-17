@@ -37,7 +37,7 @@ def Prim(G, s) # G: 그래프, s: 시작 정점
                 min_idx = i
                 min_val = edges[i]
        	visited[min_idx] = 1 # 방문 처리
-        # 간선 정보 업데이트, 업데이트 된 간선 정보를 가지는 노드들이 다음 후보군이 된다.
+        # 간선 정보 업데이트, 업데이트 된 간선 정보를 가지는 노드가 다음 후보군이 된다.
         for node, val in G[min_idx]:
             if not visited[node] and val < edges[node]:
                 edges[node] = val
