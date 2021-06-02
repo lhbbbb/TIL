@@ -27,11 +27,12 @@ def Prim(G, s) # G: 그래프, s: 시작 정점
     visited = [0] * N # 방문 여부
     edges[s] = 0 # 시작 노드 가중치 0으로 초기화    
     
-    # 2. 
+    # solve 
     for _ in range(N):
         min_val = float('inf')
         min_idx = -1
         # 방문 안한 정점 중 최소 가중치 정점 찾기
+        ## dijkstra 알고리즘과 마찬가지로 최소 힙이나, priority queue 구조를 사용하면 불필요한 연산을 줄일 수 있어 빨라진다.
         for i in range(N):
             if not visited[i] and edges[i] < min_val:
                 min_idx = i
@@ -43,6 +44,110 @@ def Prim(G, s) # G: 그래프, s: 시작 정점
                 edges[node] = val
                 p[node] = min_idx
 
+```
+
+```java
+package test;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
+
+
+class Edges implements Comparable<Edges>{
+	int v, w;
+	
+	Edges(int node, int weight) {
+		v = node;
+		w = weight;
+	}
+	
+	public String toString() {
+		return v + " " + w;
+	}
+	
+	@Override
+	public int compareTo(Edges e) {
+		if (w < e.w) {
+			return -1;
+		} else {
+			return 1;
+		}
+	}
+}
+
+public class Solution {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new FileReader("input.txt"));
+		String s = br.readLine();
+		
+		StringTokenizer st = new StringTokenizer(s);
+		
+		int T = Integer.parseInt(st.nextToken());
+		
+		for (int tc=1; tc < T+1; tc++) {
+			s = br.readLine();
+			st = new StringTokenizer(s);
+			
+			int N, M;
+			N = Integer.parseInt(st.nextToken());
+			M = Integer.parseInt(st.nextToken());
+			
+			int start, end, cost;
+			
+			ArrayList<Edges>[] graph = new ArrayList[N+1];
+			int[] edges = new int[N+1];
+			int[] visited = new int[N+1];
+			
+			Arrays.fill(edges, Integer.MAX_VALUE);
+			edges[1] = 0;
+			// init settings
+			for (int i=0; i<N+1; i++) {
+				graph[i] = new ArrayList<>();
+			}
+			
+			for (int i=0; i < M; i++) {
+				s = br.readLine();
+				st = new StringTokenizer(s);
+				start = Integer.parseInt(st.nextToken());
+				end = Integer.parseInt(st.nextToken());
+				cost = Integer.parseInt(st.nextToken());
+				
+				graph[start].add(new Edges(end, cost));
+				graph[end].add(new Edges(start, cost));
+			}
+			
+			PriorityQueue<Edges> q = new PriorityQueue<>();
+			q.offer(new Edges(1, 0));
+			// solve
+			Edges vertex;
+			while (!q.isEmpty()) {
+				vertex = q.poll();
+				int min_idx = vertex.v;
+				if (visited[min_idx] != 0) {
+					continue;
+				}
+				visited[min_idx] = 1;
+				// 간선 가중치 업데이트
+				for (Edges nxt: graph[min_idx]) {
+					int node = nxt.v;
+					int w = nxt.w;
+					if (visited[node] == 0 && edges[node] > w) {
+						edges[node] = w;
+						q.offer(new Edges(node, w));
+					}
+				}
+			}
+			System.out.println(Arrays.toString(edges));
+		}
+	}
+}
 ```
 
 
