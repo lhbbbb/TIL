@@ -123,3 +123,86 @@ class Segment {
 	}
 }
 ```
+
+```python
+N = 10
+tree = [0] * N
+lazy = [0] * N
+
+def update(s: int, e: int, idx: int, node: int, diff: int) -> None:
+    """
+
+    :param s:
+    :param e:
+    :param idx:
+    :param node:
+    :return:
+    """
+    if idx < s or idx > e:
+        return
+    tree[node] += diff
+    if s != e:
+        mid = (s+e) // 2
+        update(s, mid, idx, node*2, diff)
+        update(mid+1, e, idx, node*2+1, diff)
+
+
+def update_lazy(s: int, e: int, node: int) -> None:
+    """
+
+    :param s:
+    :param e:
+    :param node:
+    :return:
+    """
+    if lazy[node] != 0:
+        tree[node] += (e-s+1) * lazy[node]
+        if s != e:
+            lazy[node*2] += lazy[node]
+            lazy[node*2+1] += lazy[node]
+        lazy[node] = 0
+
+def query(s: int, e: int, left: int, right: int, node: int) -> int:
+    """
+
+    :param s:
+    :param e:
+    :param left:
+    :param right:
+    :param node:
+    :return:
+    """
+    update_lazy(s, e, node)
+    if (s > right or e < left):
+        return 0
+    if left <= s and e <= right:
+        return tree[node]
+    mid = (s+e) // 2
+    return query(s, mid, left, right, node*2) + query(mid+1, e, left, right, node*2+1)
+
+
+def update_range(s: int, e: int, left: int, right: int, node: int, diff: int) -> None:
+    """
+
+    :param s:
+    :param e:
+    :param left:
+    :param right:
+    :param node:
+    :param diff:
+    :return:
+    """
+    update_lazy(s, e, node)
+    if s > right or e < left:
+        return
+    if left <= s and e <= right:
+        tree[node] += (e-s+1) * diff
+        if s != e:
+            lazy[node*2] += diff
+            lazy[node*2+1] += diff
+        return
+    mid = (s+e) // 2
+    update_range(s, mid, left, right, node*2, diff)
+    update_range(mid+1, e, left, right, node*2+1, diff)
+    tree[node] = tree[node*2] + tree[node*2+1]
+```
